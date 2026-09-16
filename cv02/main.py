@@ -11,7 +11,7 @@ def get_color():
 
 def start_game():
     user_bilance = 1_000
-    print("Welcome to casion Royal")
+    print("Welcome to casino Royal")
     while True:
         bet = int(input(f"Select your bet ({user_bilance}eur):"))
 
@@ -30,7 +30,7 @@ def start_game():
             user_bilance = user_bilance + bet * 2
             print("You won!!")
         else:
-            print(f"You lost {bet}eur ")
+            print(f"You lost {bet}eur")
             user_bilance = user_bilance - bet
 
 if __name__ == "__main__":
@@ -40,6 +40,6 @@ if __name__ == "__main__":
     for _ in range(1_000_000):
         if get_color() == 0:
             color = color + 1
-        total_count = total_count +1
+        total_count = total_count + 1
 
     print(color / total_count * 100)
