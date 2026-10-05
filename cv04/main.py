@@ -31,8 +31,11 @@ def fibbonachi():
     """
     pass
 
-def fibbonachi_recursion():
-    pass
+def fibbonachi_recursion(number):
+    if number == 0 or number == 1:
+        return 1
+    
+    return fibbonachi_recursion(number -1) + fibbonachi_recursion(number -2)
 
 def pascal_triangle():
     """
