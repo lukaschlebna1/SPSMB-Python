@@ -25,23 +25,37 @@ def factorial_recursion(number):
         return 1
     return factorial_recursion(number - 1) * number
 
-def fibbonachi():
+def fibbonachi(number):
     """
     Napiste funkci, ktera vypocita hodnotu x clen fibbonachiho posloupnosti
     """
-    pass
+    prev = 1
+    actual = 1
+    if number == 1 or 2:
+        return 1
+    
+    for _ in range(number):
+        tmp = prev + actual
+        prev = actual
+        actual = tmp
+    return actual
 
 def fibbonachi_recursion(number):
     if number == 0 or number == 1:
         return 1
     
-    return fibbonachi_recursion(number -1) + fibbonachi_recursion(number -2)
+    return fibbonachi_recursion(number - 1) + fibbonachi_recursion(number - 2)
 
 def pascal_triangle():
     """
     Napiste funkci, ktera vypise X radek pascalova trouhelniku
     """
     pass
+
+def combination_number():
+    """
+    Napiste funkci ktera vypocita kombinacni cislo
+    """
 
     if __name__ == "__main__":
         lst = []
