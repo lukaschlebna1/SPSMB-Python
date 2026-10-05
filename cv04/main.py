@@ -15,7 +15,7 @@ def factorial(number):
     """
     result = 1
     index = 1
-    while index < number:
+    while index <= number:
         result = result * index
         index += 1
     return result
@@ -46,26 +46,18 @@ def fibbonachi_recursion(number):
     
     return fibbonachi_recursion(number - 1) + fibbonachi_recursion(number - 2)
 
-def pascal_triangle():
+def pascal_triangle(i):
     """
     Napiste funkci, ktera vypise X radek pascalova trouhelniku
     """
-    pass
+    for item in range(i + 1):
+        print(int(combination_number(i, item)))
 
-def combination_number():
+def combination_number(n, k):
     """
     Napiste funkci ktera vypocita kombinacni cislo
     """
+    return (factorial_recursion(n) / (factorial_recursion(n-k) * factorial_recursion(k)))
 
-    if __name__ == "__main__":
-        lst = []
-        number = None
-        while number is None or number != -1:
-            number = int(input("Zadej hodnotu: "))
-            if number == -1:
-                break
-            lst.append(number)
-
-        print(f"Max value {max(lst)}")
-        print(f"Min value {min(lst)}")
-        print(f"Mean value {sum(lst) / len(lst)}")
+if __name__ == "__main__":
+    pascal_triangle(10)
