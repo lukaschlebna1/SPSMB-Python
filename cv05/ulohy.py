@@ -16,11 +16,48 @@ def nums():
         print(f"{i + 1}")
 
 #3.5
-def evensum():
+#def evensum():
+    #N = int(input("Zadej cislo: "))
+    #for i in range(N):
+        #if i % 2 != 0
+#nedodelane
+
+#3.2
+def backwards():
     N = int(input("Zadej cislo: "))
     for i in range(N):
-        if i % 2 != 0
+        print(f"{N-i}")
     
+def nasobilka():
+    N = int(input("Zadej cislo: "))
+    for i in range(1, 11):
+        print(f"{N*i}")
+
+def minimum():
+    N = int(input("Zadej cislo: "))
+    min = N
+    while N != -1:
+        if min > N:
+            min = N
+        N = int(input("Zadej cislo: "))
+    print(f"minimum je: {min} ")
+
+def sum():
+    N = int(input("Zadej cislo: "))
+    print(f"{(N*(N+1)) / 2}")
+
+def even_sum():
+    soucet = 0
+    N = int(input("Zadej cislo: "))
+    for i in range(N + 1):
+        if i % 2 == 0:
+            soucet += i
+    print(f"sum: {soucet}")
+
+def factorial():
+    result = 1
+    index = 1
+    N = int(input("Zadej cislo: "))
 
 if __name__ == "__main__":
-    pass
+    even_sum()
