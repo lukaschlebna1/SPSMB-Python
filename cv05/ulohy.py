@@ -41,7 +41,7 @@ def minimum():
     print(f"minimum je: {min} ")
 
 #3.3
-def sum():
+def sum1():
     N = int(input("Zadej cislo: "))
     print(f"{(N*(N+1)) / 2}")
 
@@ -133,5 +133,24 @@ def ulohy():
     f = (a / b)
     print(f"vysledek: {c}, {d}, {e}, {f}")
 
+#7.3
+def prumer_n_cisel():
+    N = int(input("Zadej kolik cisel chces "))
+    numbers = []
+    for i in range(N):
+        number = int(input(f"Zadej {i+1}. cislo: "))
+        numbers.append(number)
+
+    print(sum(numbers) / len(numbers))
+
+#7.5
+def pocetcislic():
+    n = 156432 # [1,5,6,4,3,2]
+    lst = []
+    while n != 0:
+        lst.append(n % 10)
+        n = n // 10
+    print(len(lst))
+
 if __name__ == "__main__":
-    ulohy()
+    pocetcislic()
