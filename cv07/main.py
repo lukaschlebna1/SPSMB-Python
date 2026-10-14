@@ -26,15 +26,20 @@
 #16 = 8 * 2 + 0
 
 def NSD():
-    a = int(input("Zadej cislo 1: "))
-    b = int(input("Zadej cislo 2: "))
+    # Získání vstupů od uživatele
+    A = int(input("Zadej cislo 1: "))
+    B = int(input("Zadej cislo 2: "))
 
-    while b != 0:
-        zbytek = a % b
-        podil = a // b
+    while B != 0:
+        podil = A // B
+        zbytek = A % B
+        
+        print(f"{A} = {B} * {podil} + {zbytek}")
 
-    print(f"nejmensi spolecny delitel je: {N}")
+        A = B
+        B = zbytek
 
+    print(f"Nejmenší společný násobek je: {A}")
 
 if __name__ == "__main__":
     NSD()
