@@ -133,5 +133,12 @@ def ulohy():
     f = (a / b)
     print(f"vysledek: {c}, {d}, {e}, {f}")
 
+#11.1
+def retezec():
+    text = int(input("Zadej "))
+
+#11.3
+
+
 if __name__ == "__main__":
     ulohy()

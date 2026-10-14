@@ -26,7 +26,6 @@
 #16 = 8 * 2 + 0
 
 def NSD():
-    # Získání vstupů od uživatele
     A = int(input("Zadej cislo 1: "))
     B = int(input("Zadej cislo 2: "))
 
@@ -40,6 +39,8 @@ def NSD():
         B = zbytek
 
     print(f"Nejmenší společný násobek je: {A}")
+
+#nejmensi spolecny nasobek
 
 if __name__ == "__main__":
     NSD()
