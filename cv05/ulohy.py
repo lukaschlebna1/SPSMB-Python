@@ -41,7 +41,7 @@ def minimum():
     print(f"minimum je: {min} ")
 
 #3.3
-def sum():
+def suma():
     N = int(input("Zadej cislo: "))
     print(f"{(N*(N+1)) / 2}")
 
@@ -135,10 +135,46 @@ def ulohy():
 
 #11.1
 def retezec():
-    text = int(input("Zadej "))
+    text = (input("Zadej text: "))
+    print(len(text))
 
 #11.3
+def palindrom():
+    txt = input("Zadej text: ")
+    pal = txt[::-1]
+    if pal == txt:
+        print(f"Zadane slovo je palindrom")
+    else:
+        print(f"Neni palidrom")
 
+#11.4
+def samo():
+    txt = input("Zadej text: ")
+    lst = ["a", "e", "i", "o", "u"]
+    for c in lst:
+        counter = 0
+        for h in txt:
+            if c.capitalize() == h.capitalize():
+                counter += 1
+        print(f"V textu se nachazi {c} -> {counter}")
+
+#11.5
+def znaky():
+    txt = input("Zadej text: ")
+    dct = {}
+    for i in txt:
+        if i in dct.keys():
+            counter = dct[i] + i
+            dct[i] = counter
+        else:
+            dct[i] = i
+    print(dct)
+
+#12.1
+def list_sum():
+    N = input("Zadejte cisla: ")
+    numbers = [int(x) for x in N.split()]
+    print(sum(numbers))
 
 if __name__ == "__main__":
-    ulohy()
+    list_sum()
