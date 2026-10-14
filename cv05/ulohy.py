@@ -19,7 +19,8 @@ def nums():
 def evensum():
     N = int(input("Zadej cislo: "))
     for i in range(N):
-        if i % 2 != 0
+        if i % 2 != 0:
+            soucet = soucet + soucet
     
 
 if __name__ == "__main__":
