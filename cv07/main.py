@@ -40,7 +40,15 @@ def NSD():
 
     print(f"Nejmenší společný násobek je: {A}")
 
-#nejmensi spolecny nasobek
+def NSD_NSN():
+    while b != 0:
+        a, b = b, a % b
+
+def NSN():
+    a = int(input("Zadej cislo a: "))
+    b = int(input("Zadej cislo b: "))
+    print(+(a * b) / NSD_NSN(a,b))
+#nefunguje
 
 if __name__ == "__main__":
     NSD()

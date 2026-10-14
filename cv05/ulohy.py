@@ -46,7 +46,7 @@ def suma():
     print(f"{(N*(N+1)) / 2}")
 
 #3.4
-def even_sum():
+def even_sumo():
     soucet = 0
     N = int(input("Zadej cislo: "))
     for i in range(1, N + 1):
@@ -176,5 +176,42 @@ def list_sum():
     numbers = [int(x) for x in N.split()]
     print(sum(numbers))
 
+#12.3
+def seznam():
+    N = input("Zadejte cisla: ")
+    number = []
+    for i in N.split():
+        number.append(int(i))
+    #number.reverse()
+    print(number[::-1])
+
+#12.4
+def dupe():
+    N = input("Zadejte cisla: ")
+    cislo = []
+    for i in N.split():
+        a = int(i)
+        if a not in cislo:
+            cislo.append(a)
+            #if a no in cislo:
+            # cislo.append(a)
+    st = set(cislo)
+    lst = list(st)
+    print(lst)
+
+#12.2
+def min_max():
+    N = input("Zadej cisla: ")
+    numbers = []
+    min = float("inf")
+    max = float("-inf")
+    for i in N.split():
+        a = int(i)
+        if a > max:
+            max = i
+        if a < min:
+            min = i 
+    print(f"max {max} min {min}")
+
 if __name__ == "__main__":
-    list_sum()
+    dupe()
