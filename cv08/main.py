@@ -19,10 +19,34 @@ if __name__ == "__main__":
         [1, 2]
     ]
 
-    kernel = [
+    kernel_1 = [
         [1, 0, -1],
         [1, 0, -1],
         [1, 0, -1]
+    ]
+
+    kernel_2 = [
+        [1, 1, 1],
+        [0, 0, 0],
+        [-1, -1, -1]
+    ]
+
+    bluer_kernel = [
+        [1/9, 1/9, 1/9],
+        [1/9, 1/9, 1/9],
+        [1/9, 1/9, 1/9]
+    ]
+
+    sharpening_kernel = [
+        [0, -1, 0],
+        [-1, 1, 1],
+        [0, 1, 2]
+    ]
+
+    emboss_kernel = [
+        [-2, -1, 0],
+        [-1, 1, 1],
+        [0, 1, 2]
     ]
 
 #matrix_c = plus(matrix_a, matrix_b)
@@ -37,6 +61,8 @@ print(determinant(matrix_x))
 image = load("C:\\Users\\lukas.chlebna\\Desktop\\python\\SPSMB-Python\\cv08\\image.png")
 
 img = numpy_to_list(image)
-new_img = convolution(img, kernel)
-np_img = list_to_numpy(new_img)
+new_img = convolution(img, kernel_1)
+new_img_2 = convolution(img, kernel_2)
+result = convolution(img, emboss_kernel)
+np_img = list_to_numpy(plus(new_img, new_img_2))
 show(np_img)
