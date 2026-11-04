@@ -17,3 +17,8 @@ def numpy_to_list(matrix):
 
 def list_to_numpy(my_list):
     return np.array(my_list, dtype=int)
+
+#hlavni program
+#matrix = load("C:\\Users\\lukas.chlebna\\Desktop\\python\\SPSMB-Python\\cv08\\image.png")
+#print(matrix)
+#show(matrix)
