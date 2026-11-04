@@ -82,3 +82,9 @@ def T(matrix):
         for j in range(n):
             result[j][i] = matrix[i][j]
     return result
+
+def replace_row(matrix, vector, index):
+    pass
+
+def replace_collu():
+    pass
