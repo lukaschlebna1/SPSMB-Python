@@ -1,3 +1,8 @@
+import math
+
+def signoid(x):
+    return 1 / (1 + math.exp(-x))
+
 def neuron_network(
         has_four_legs,
         has_fur,
@@ -15,7 +20,7 @@ def neuron_network(
         has_nose * 0.1 +
         has_ears * 0.5 +
         has_fins * -0.2
-    ) + 0.1 #bias
+    ) + 0.1 # bias
 
     fish = (
         has_four_legs * -0.2 +
@@ -25,12 +30,27 @@ def neuron_network(
         has_ears * 0.1 +
         has_nose * 0.1 +
         has_fins * 0.6
-        ) + 0.6 # bias
+    ) + 0.6 # bias
     
-    return dog, fish
+    cat = (
+        has_four_legs * 0.4 +
+        has_fur * 0.3 +
+        has_eyes * 0.5 +
+        has_tail * 0.5 +
+        has_ears * 0.5 +
+        has_nose * 0.3 +
+        has_fins * 0.0
+    ) + 0.1 # bias
+    
+    return [signoid(dog), signoid(fish), signoid(cat)]
+
+def do_softmax(items):
+    total_signoid = sum(items)
+    for index, i in enumerate(items):
+        print(f"{index} -> {i / total_signoid}")
     
 if __name__ == "__main__":
-    result = neuron_network(
+    do_softmax(neuron_network(
         has_four_legs=0.75,
         has_ears=1,
         has_fins=0,
@@ -38,5 +58,4 @@ if __name__ == "__main__":
         has_tail=1,
         has_eyes=1,
         has_nose=1,
-    )
-    print(result)
+    ))
