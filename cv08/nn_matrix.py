@@ -1,61 +1,41 @@
 import math
+from matrix import T, multiply, apply, plus
 
 def signoid(x):
     return 1 / (1 + math.exp(-x))
 
 def neuron_network(
-        has_four_legs,
-        has_fur,
-        has_eyes,
-        has_tail,
-        has_ears,
-        has_nose,
-        has_fins,
+    X
 ):
-    dog = (
-        has_four_legs * 0.4 +
-        has_fur * 0.1 +
-        has_tail * 0.3 +
-        has_eyes * 0.4 +
-        has_nose * 0.1 +
-        has_ears * 0.5 +
-        has_fins * -0.2
-    ) + 0.1 # bias
+    X = T(X)
+    W = [
+        [0.4, 0.1, 0.3, 0.4, 0.1, 0.5, -0.2], # DOG
+        [-0.2, -0.2, 0.1, 0.1, 0.1, 0.1, 0.6], # FISH
+        [0.4, 0.3, 0.5, 0.5, 0.5, 0.3, 0.0], # CAT
+    ]
 
-    fish = (
-        has_four_legs * -0.2 +
-        has_fur * -0.2 +
-        has_eyes * 0.1 +
-        has_tail * 0.1 +
-        has_ears * 0.1 +
-        has_nose * 0.1 +
-        has_fins * 0.6
-    ) + 0.6 # bias
-    
-    cat = (
-        has_four_legs * 0.4 +
-        has_fur * 0.3 +
-        has_eyes * 0.5 +
-        has_tail * 0.5 +
-        has_ears * 0.5 +
-        has_nose * 0.3 +
-        has_fins * 0.0
-    ) + 0.1 # bias
-    
-    return [signoid(dog), signoid(fish), signoid(cat)]
+    b = T([[0.1, 0.6, 0.1]]) # bias
+
+    result = multiply(W, X)
+
+    result = plus(result, b)
+
+    return apply(result, signoid)
 
 def do_softmax(items):
     total_signoid = sum(items)
-    for index, i in enumerate(items):
-        print(f"{index} -> {i / total_signoid}")
+    result = []
+    for i in items:
+        result.append(i/total_signoid)
+    return result
     
 if __name__ == "__main__":
-    do_softmax(neuron_network(
-        has_four_legs=0.75,
-        has_ears=1,
-        has_fins=0,
-        has_fur=1,
-        has_tail=1,
-        has_eyes=1,
-        has_nose=1,
-    ))
+    X = [
+        [0.75, 1, 1, 1, 1, 1, 0] #priznaky/vstup
+    ]
+
+    Y = neuron_network(
+        X
+    )
+    Y = T(Y)
+    print(do_softmax(Y))
